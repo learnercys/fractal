@@ -25,6 +25,9 @@ func main() {
 	c2 := NewSwaggerUIController(service)
 	app.MountSwaggerUIController(service, c2)
 
+	c3 := NewBottleController(service)
+	app.MountBottleController(service, c3)
+
 	// Start service
 	if err := service.ListenAndServe(":8080"); err != nil {
 		service.LogError("startup", "err", err)
