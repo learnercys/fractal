@@ -1,28 +1,25 @@
 consumes:
 - application/json
-- application/xml
-- application/gob
-- application/x-gob
 definitions:
   GoaExampleBottle:
     description: A bottle of wine (default view)
     example:
-      href: Voluptates non excepturi.
-      id: 6.996573674690313e+18
-      name: Tenetur et saepe ratione debitis enim sapiente.
+      href: Impedit alias eos voluptatibus qui.
+      id: 7.263276198983628e+18
+      name: Accusantium autem rerum accusamus.
     properties:
       href:
         description: API href for making requests on the bottle
-        example: Voluptates non excepturi.
+        example: Impedit alias eos voluptatibus qui.
         type: string
       id:
         description: Unique bottle ID
-        example: 6.996573674690313e+18
+        example: 7.263276198983628e+18
         format: int64
         type: integer
       name:
         description: Name of wine
-        example: Tenetur et saepe ratione debitis enim sapiente.
+        example: Accusantium autem rerum accusamus.
         type: string
     required:
     - id
@@ -70,7 +67,7 @@ definitions:
 info:
   description: A simple goa service
   title: The virtual wine cellar
-  version: ""
+  version: "1"
 paths:
   /bottles/{bottleID}:
     get:
@@ -96,7 +93,7 @@ paths:
       - bottle
   /docs/swagger.json:
     get:
-      operationId: swagger#/docs/swagger.json
+      operationId: docs#/docs/swagger.json
       responses:
         "200":
           description: File downloaded
@@ -124,9 +121,6 @@ paths:
       summary: Download public/swagger-ui/
 produces:
 - application/json
-- application/xml
-- application/gob
-- application/x-gob
 responses:
   NotFound:
     description: Not Found

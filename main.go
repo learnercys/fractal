@@ -18,9 +18,9 @@ func main() {
 	service.Use(middleware.ErrorHandler(service, true))
 	service.Use(middleware.Recover())
 
-	// Mount "swagger" controller
-	c := NewSwaggerController(service)
-	app.MountSwaggerController(service, c)
+	// Mount "docs" controller
+	c := NewDocsController(service)
+	app.MountDocsController(service, c)
 	// Mount "swagger-ui" controller
 	c2 := NewSwaggerUIController(service)
 	app.MountSwaggerUIController(service, c2)
